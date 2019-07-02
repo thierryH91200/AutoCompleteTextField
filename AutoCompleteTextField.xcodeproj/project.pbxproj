@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0327A09922CA032400D84D0D /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0327A09B22CA032400D84D0D /* MainWindowController.xib */; };
 		0383D92C20EB8F5000A27010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D92B20EB8F5000A27010 /* AppDelegate.swift */; };
 		0383D92E20EB8F5100A27010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0383D92D20EB8F5100A27010 /* Assets.xcassets */; };
 		0383D93120EB8F5200A27010 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383D92F20EB8F5200A27010 /* MainMenu.xib */; };
 		0383D93D20EB8F5200A27010 /* AutoCompleteTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D93C20EB8F5200A27010 /* AutoCompleteTextFieldTests.swift */; };
 		0383D94820EB8F5200A27010 /* AutoCompleteTextFieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D94720EB8F5200A27010 /* AutoCompleteTextFieldUITests.swift */; };
+		0383D95620EB8FBA00A27010 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D95520EB8FBA00A27010 /* AutoCompleteTextField.swift */; };
+		0383D95920EB8FFB00A27010 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D95720EB8FFB00A27010 /* MainWindowController.swift */; };
+		0383D95C20EB93B800A27010 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D95B20EB93B800A27010 /* Cities.swift */; };
+		0383D96220EB95C100A27010 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0383D96120EB95C000A27010 /* city.list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0327A09A22CA032400D84D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
+		0327A09D22CA032C00D84D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainWindowController.strings; sourceTree = "<group>"; };
+		0327A09E22CA033700D84D0D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		0327A09F22CA033700D84D0D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainWindowController.strings; sourceTree = "<group>"; };
+		0327A0A122CA035100D84D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		0383D92820EB8F5000A27010 /* AutoCompleteTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoCompleteTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0383D92B20EB8F5000A27010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0383D92D20EB8F5100A27010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +54,10 @@
 		0383D94320EB8F5200A27010 /* AutoCompleteTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoCompleteTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0383D94720EB8F5200A27010 /* AutoCompleteTextFieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextFieldUITests.swift; sourceTree = "<group>"; };
 		0383D94920EB8F5200A27010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0383D95520EB8FBA00A27010 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
+		0383D95720EB8FFB00A27010 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		0383D95B20EB93B800A27010 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		0383D96120EB95C000A27010 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,11 +108,16 @@
 		0383D92A20EB8F5000A27010 /* AutoCompleteTextField */ = {
 			isa = PBXGroup;
 			children = (
+				0383D95520EB8FBA00A27010 /* AutoCompleteTextField.swift */,
 				0383D92B20EB8F5000A27010 /* AppDelegate.swift */,
 				0383D92D20EB8F5100A27010 /* Assets.xcassets */,
 				0383D92F20EB8F5200A27010 /* MainMenu.xib */,
 				0383D93220EB8F5200A27010 /* Info.plist */,
 				0383D93320EB8F5200A27010 /* AutoCompleteTextField.entitlements */,
+				0383D95B20EB93B800A27010 /* Cities.swift */,
+				0383D96120EB95C000A27010 /* city.list.json */,
+				0383D95720EB8FFB00A27010 /* MainWindowController.swift */,
+				0327A09B22CA032400D84D0D /* MainWindowController.xib */,
 			);
 			path = AutoCompleteTextField;
 			sourceTree = "<group>";
@@ -184,18 +203,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = thierryH24;
 				TargetAttributes = {
 					0383D92720EB8F5000A27010 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					0383D93720EB8F5200A27010 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 0383D92720EB8F5000A27010;
 					};
 					0383D94220EB8F5200A27010 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 0383D92720EB8F5000A27010;
 					};
 				};
@@ -207,6 +234,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 0383D91F20EB8F5000A27010;
 			productRefGroup = 0383D92920EB8F5000A27010 /* Products */;
@@ -225,7 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0383D96220EB95C100A27010 /* city.list.json in Resources */,
 				0383D92E20EB8F5100A27010 /* Assets.xcassets in Resources */,
+				0327A09922CA032400D84D0D /* MainWindowController.xib in Resources */,
 				0383D93120EB8F5200A27010 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0383D95C20EB93B800A27010 /* Cities.swift in Sources */,
 				0383D92C20EB8F5000A27010 /* AppDelegate.swift in Sources */,
+				0383D95620EB8FBA00A27010 /* AutoCompleteTextField.swift in Sources */,
+				0383D95920EB8FFB00A27010 /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,10 +320,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0327A09B22CA032400D84D0D /* MainWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0327A09A22CA032400D84D0D /* Base */,
+				0327A09D22CA032C00D84D0D /* en */,
+				0327A09F22CA033700D84D0D /* fr */,
+			);
+			name = MainWindowController.xib;
+			sourceTree = "<group>";
+		};
 		0383D92F20EB8F5200A27010 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0383D93020EB8F5200A27010 /* Base */,
+				0327A09E22CA033700D84D0D /* fr */,
+				0327A0A122CA035100D84D0D /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -302,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -362,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -415,7 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AutoCompleteTextField/AutoCompleteTextField.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutoCompleteTextField/Info.plist;
@@ -425,7 +472,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..AutoCompleteTextField;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -433,7 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AutoCompleteTextField/AutoCompleteTextField.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AutoCompleteTextField/Info.plist;
@@ -443,7 +490,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..AutoCompleteTextField;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -462,7 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..AutoCompleteTextFieldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoCompleteTextField.app/Contents/MacOS/AutoCompleteTextField";
 			};
 			name = Debug;
@@ -482,7 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..AutoCompleteTextFieldTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoCompleteTextField.app/Contents/MacOS/AutoCompleteTextField";
 			};
 			name = Release;
@@ -501,7 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..AutoCompleteTextFieldUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = AutoCompleteTextField;
 			};
 			name = Debug;
@@ -520,7 +567,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thierry24100..AutoCompleteTextFieldUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = AutoCompleteTextField;
 			};
 			name = Release;
