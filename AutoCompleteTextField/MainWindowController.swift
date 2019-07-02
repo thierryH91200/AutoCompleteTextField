@@ -174,9 +174,7 @@ class MainWindowController: NSWindowController {
     {
         let tableView = notification.object as! NSTableView
         let row = tableView.selectedRow
-        if row == -1 {
-            return
-        }
+        guard row != -1 else {  return }
         
         let latitude = autoCompleteFilterArray[row].coord.latitude
         let longitude = autoCompleteFilterArray[row].coord.longitude
@@ -186,9 +184,6 @@ class MainWindowController: NSWindowController {
         addressEntered(location, info: "City")
     }
 
-    
-
-    
     // MARK: - Actions
     @IBAction func addItem(_ sender: NSButton)
     {
@@ -198,10 +193,8 @@ class MainWindowController: NSWindowController {
         // tableView
         let city = self.autoCompleteFilterArray[selectedRow]
         let cityExist = arrayCity.filter { $0.id == city.id }.count
-        if cityExist > 0
-        {
-            return
-        }
+        guard cityExist == 0 else { return }
+        
         arrayCity.append(city)
         
         tableViewCity.reloadData()
@@ -216,20 +209,15 @@ class MainWindowController: NSWindowController {
     {
         // tableView
         let selectedRow = tableViewCity.selectedRow
-//        let city = arrayCity[ selectedRow ]
-        //        removeItem( city, itemArray: &arrayCity)
         arrayCity.remove(at: selectedRow)
         
         tableViewCity.reloadData()
-        //        selectItem(selectedRow - 1, tableView: tableViewCity)
         
         tableViewCity.scrollRowToVisible(selectedRow - 1 )
         tableViewCity.selectRowIndexes(IndexSet(integer: selectedRow - 1), byExtendingSelection: false)
         
-        
         saveCity()
     }
-    
     
 }
 

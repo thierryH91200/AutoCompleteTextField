@@ -17,6 +17,7 @@
 		0383D95920EB8FFB00A27010 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D95720EB8FFB00A27010 /* MainWindowController.swift */; };
 		0383D95C20EB93B800A27010 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D95B20EB93B800A27010 /* Cities.swift */; };
 		0383D96220EB95C100A27010 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0383D96120EB95C000A27010 /* city.list.json */; };
+		0394FAF722CBAA9B00E6EF17 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0394FAF622CBAA9B00E6EF17 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		0383D95720EB8FFB00A27010 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		0383D95B20EB93B800A27010 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		0383D96120EB95C000A27010 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		0394FAF622CBAA9B00E6EF17 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		0383D91F20EB8F5000A27010 = {
 			isa = PBXGroup;
 			children = (
+				0394FAF622CBAA9B00E6EF17 /* README.md */,
 				0383D92A20EB8F5000A27010 /* AutoCompleteTextField */,
 				0383D93B20EB8F5200A27010 /* AutoCompleteTextFieldTests */,
 				0383D94620EB8F5200A27010 /* AutoCompleteTextFieldUITests */,
@@ -255,6 +258,7 @@
 			files = (
 				0383D96220EB95C100A27010 /* city.list.json in Resources */,
 				0383D92E20EB8F5100A27010 /* Assets.xcassets in Resources */,
+				0394FAF722CBAA9B00E6EF17 /* README.md in Resources */,
 				0327A09922CA032400D84D0D /* MainWindowController.xib in Resources */,
 				0383D93120EB8F5200A27010 /* MainMenu.xib in Resources */,
 			);
