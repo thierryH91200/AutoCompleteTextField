@@ -199,7 +199,6 @@ class MainWindowController: NSWindowController {
         
         tableViewCity.reloadData()
         
-        tableViewCity.scrollRowToVisible(arrayCity.count - 1 )
         tableViewCity.selectRowIndexes(IndexSet(integer: arrayCity.count - 1), byExtendingSelection: false)
         
         saveCity()
@@ -213,7 +212,6 @@ class MainWindowController: NSWindowController {
         
         tableViewCity.reloadData()
         
-        tableViewCity.scrollRowToVisible(selectedRow - 1 )
         tableViewCity.selectRowIndexes(IndexSet(integer: selectedRow - 1), byExtendingSelection: false)
         
         saveCity()
