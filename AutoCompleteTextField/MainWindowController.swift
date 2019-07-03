@@ -93,7 +93,6 @@ class MainWindowController: NSWindowController {
             }
         }
         return []
-
     }
     
     func saveCity()

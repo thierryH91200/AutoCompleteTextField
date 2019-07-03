@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0327A09922CA032400D84D0D /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0327A09B22CA032400D84D0D /* MainWindowController.xib */; };
+		035BAA9122CCB58F0081B76B /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 035BAA9022CCB58E0081B76B /* doc */; };
 		0383D92C20EB8F5000A27010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D92B20EB8F5000A27010 /* AppDelegate.swift */; };
 		0383D92E20EB8F5100A27010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0383D92D20EB8F5100A27010 /* Assets.xcassets */; };
 		0383D93120EB8F5200A27010 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0383D92F20EB8F5200A27010 /* MainMenu.xib */; };
@@ -43,6 +44,7 @@
 		0327A09E22CA033700D84D0D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		0327A09F22CA033700D84D0D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainWindowController.strings; sourceTree = "<group>"; };
 		0327A0A122CA035100D84D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		035BAA9022CCB58E0081B76B /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
 		0383D92820EB8F5000A27010 /* AutoCompleteTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoCompleteTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0383D92B20EB8F5000A27010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0383D92D20EB8F5100A27010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		0383D91F20EB8F5000A27010 = {
 			isa = PBXGroup;
 			children = (
+				035BAA9022CCB58E0081B76B /* doc */,
 				0394FAF622CBAA9B00E6EF17 /* README.md */,
 				0383D92A20EB8F5000A27010 /* AutoCompleteTextField */,
 				0383D93B20EB8F5200A27010 /* AutoCompleteTextFieldTests */,
@@ -259,6 +262,7 @@
 				0383D96220EB95C100A27010 /* city.list.json in Resources */,
 				0383D92E20EB8F5100A27010 /* Assets.xcassets in Resources */,
 				0394FAF722CBAA9B00E6EF17 /* README.md in Resources */,
+				035BAA9122CCB58F0081B76B /* doc in Resources */,
 				0327A09922CA032400D84D0D /* MainWindowController.xib in Resources */,
 				0383D93120EB8F5200A27010 /* MainMenu.xib in Resources */,
 			);
