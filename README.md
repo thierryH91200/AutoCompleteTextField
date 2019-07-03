@@ -19,6 +19,6 @@
 <p align="center">
 <img src="doc/AutoCompleteTextField.png" alt="Sample">
 <p align="center">
-<em>A skeleton app showing AutoCompleteTextField2 in action</em>
+<em>A skeleton app showing AutoCompleteTextField3 in action</em>
 </p>
 </p>
