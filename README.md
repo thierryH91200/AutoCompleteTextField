@@ -17,8 +17,8 @@
 </p>
 
 <p align="center">
-<img src="doc/AutoCompleteTextField.png" alt="Sample">
+<img src="doc/AutoCompleteTextField3.png" alt="Sample">
 <p align="center">
-<em>A skeleton app showing AutoCompleteTextField3 in action</em>
+<em>A skeleton app showing AutoCompleteTextField in action</em>
 </p>
 </p>
