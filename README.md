@@ -7,7 +7,7 @@
 
 # AutoCompleteTextField
 
-# under construction
+
 
 <p align="center">
 <img src="doc/AutoCompleteTextField.png" alt="Sample">
