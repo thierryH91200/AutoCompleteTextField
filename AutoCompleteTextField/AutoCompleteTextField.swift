@@ -11,14 +11,14 @@ import AppKit
 @objc protocol AutoCompleteTableViewDelegate:NSObjectProtocol
 {
     func textField1(_ textField: NSTextField,completions words: [String],forPartialWordRange charRange: NSRange, indexOfSelectedItem index: Int) ->[String]
-    func tableViewSelection(_ notification: Notification)
+    @objc optional func tableViewSelection(_ notification: Notification)
     @objc optional func didSelectItem(_ selectedItem: String)
 }
 
 
-class AutoCompleteTextField: NSTextField
+class AutoCompleteTextField: NSSearchField
 {
-    @IBInspectable var popOverWidth:CGFloat = 200.0
+    @IBInspectable var popOverWidth :CGFloat = 200.0
     @IBInspectable var maxResults:Int = 10
 
     var tableViewDelegate:AutoCompleteTableViewDelegate?
@@ -39,7 +39,7 @@ class AutoCompleteTextField: NSTextField
         tableView.selectionHighlightStyle = NSTableView.SelectionHighlightStyle.regular
         tableView.backgroundColor = NSColor.clear
         tableView.rowSizeStyle = NSTableView.RowSizeStyle.small
-        tableView.intercellSpacing = NSMakeSize(10.0, 0.0)
+        tableView.intercellSpacing = NSSize(width: 10.0, height: 0.0)
         tableView.headerView = nil
         tableView.refusesFirstResponder = true
         tableView.target = self
@@ -55,7 +55,7 @@ class AutoCompleteTextField: NSTextField
         tableSrollView.hasVerticalScroller = true
         
         // see issue #1, popover throws when contentView's height=0, CoreGraphics bug?
-        let contentView:NSView = NSView(frame: NSRect.init(x: 0, y: 0, width: popOverWidth, height: 1))
+        let contentView:NSView = NSView(frame: NSRect(x: 0, y: 0, width: popOverWidth, height: 1))
         contentView.addSubview(tableSrollView)
         
         let contentViewController = NSViewController()
@@ -72,7 +72,7 @@ class AutoCompleteTextField: NSTextField
     }
     
     override func keyUp(with theEvent: NSEvent) {
-        let row:Int = self.autoCompleteTableView!.selectedRow
+        let row = self.autoCompleteTableView!.selectedRow
         let isShow = self.autoCompletePopover!.isShown
         
         switch(theEvent.keyCode)
@@ -111,8 +111,6 @@ class AutoCompleteTextField: NSTextField
 //            }
 //            return
            
-            
-            
         default:
             break
         }
@@ -184,9 +182,9 @@ extension AutoCompleteTextField: NSPopoverDelegate
         //let numberOfRows = min(self.autoCompleteTableView!.numberOfRows, maxResults)
         let numberOfRows =  maxResults
         let height = (self.autoCompleteTableView!.rowHeight + self.autoCompleteTableView!.intercellSpacing.height) * CGFloat(numberOfRows) + 2 * 0.0
-        let frame = NSMakeRect(0, 0, popOverWidth, height)
+        let frame = NSRect(x: 0, y: 0, width: popOverWidth, height: height)
         self.autoCompleteTableView?.enclosingScrollView?.frame = NSInsetRect(frame, popOverPadding, popOverPadding)
-        self.autoCompletePopover?.contentSize = NSMakeSize(NSWidth(frame), NSHeight(frame))
+        self.autoCompletePopover?.contentSize = NSSize(width: frame.width, height: frame.height)
     }
 }
 
@@ -213,7 +211,7 @@ extension AutoCompleteTextField : NSTableViewDelegate
             cellView!.textField = textField
             cellView!.identifier = NSUserInterfaceItemIdentifier(rawValue: "MyView")
         }
-        let attrs : [NSAttributedString.Key : Any] = [.foregroundColor:NSColor.black, .font:NSFont.systemFont(ofSize: 13)]
+        let attrs : [NSAttributedString.Key : Any] = [.foregroundColor: NSColor.black, .font: NSFont.systemFont(ofSize: 13)]
         let mutableAttriStr = NSMutableAttributedString(string: self.matches![row], attributes: attrs)
         cellView!.textField!.attributedStringValue = mutableAttriStr
         
@@ -222,7 +220,7 @@ extension AutoCompleteTextField : NSTableViewDelegate
     
     func tableViewSelectionDidChange(_ notification: Notification)
     {
-        self.tableViewDelegate?.tableViewSelection(notification)
+        self.tableViewDelegate?.tableViewSelection!(notification)
     }
 
 }
@@ -256,10 +254,10 @@ class AutoCompleteTableRowView : NSTableRowView
         get
         {
             if self.isSelected == true {
-                return NSView.BackgroundStyle.dark
+                return NSView.BackgroundStyle.emphasized
             }
             else {
-                return NSView.BackgroundStyle.light
+                return NSView.BackgroundStyle.normal
             }
         }
     }

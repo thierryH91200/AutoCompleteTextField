@@ -15,7 +15,6 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var searchField: AutoCompleteTextField!
     @IBOutlet weak var tableViewCity: NSTableView!
     @IBOutlet weak var mapView: MKMapView!
-
     
     var autoCompleteFilterArray : [Cities1] = []
     var cities = [Cities1]()
@@ -23,7 +22,7 @@ class MainWindowController: NSWindowController {
     
     let Defaults = UserDefaults.standard
     var location = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-
+    
     override var windowNibName: NSNib.Name? {
         return NSNib.Name( "MainWindowController")
     }
@@ -36,8 +35,9 @@ class MainWindowController: NSWindowController {
         searchField.tableViewDelegate = self
         DispatchQueue.global().async {
             self.cities = self.loadJson()
+            print("Finish loan Json")
         }
-        self.arrayCity = self.loadCity()
+ //       self.arrayCity = self.loadCity()
         tableViewCity.reloadData()
     }
     
@@ -108,7 +108,7 @@ class MainWindowController: NSWindowController {
             print("error: ", error)
         }
     }
-
+    
     // MARK: - MapKit
     func addressEntered(_ latLong: CLLocation, info: String)
     {
@@ -118,33 +118,33 @@ class MainWindowController: NSWindowController {
         let geoCoder = CLGeocoder()
         
         geoCoder.reverseGeocodeLocation(currentLocation, completionHandler:
-            { (placemarks, error)  in
-                if let placemarks = placemarks
-                {
-                    for placemark in placemarks
-                    {
-                        addresses.append(self.formatAddressFromPlacemark(placemark))
-                    }
-                    
-                    let coord = placemarks[0].location?.coordinate
-                    self.pointAnnotaion(coord!, addresse: addresses, info: info)
-                    
-                    let latitude = placemarks[0].location!.coordinate.latitude
-                    let longitude = placemarks[0].location!.coordinate.longitude
-                    self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                    
-                    let spanX = 0.0725
-                    let spanY = 0.0725
-                    let span = MKCoordinateSpan (latitudeDelta: spanX, longitudeDelta: spanY)
-                    let region = MKCoordinateRegion(center: self.location, span: span)
-                    
-                    self.mapView.setRegion(region, animated: true)
-                }
-                else
-                {
-                    print ("Address not found. : \(String(describing: error))")
-                }
-        }  )
+                                            { (placemarks, error)  in
+                                                if let placemarks = placemarks
+                                                {
+                                                    for placemark in placemarks
+                                                    {
+                                                        addresses.append(self.formatAddressFromPlacemark(placemark))
+                                                    }
+                                                    
+                                                    let coord = placemarks[0].location?.coordinate
+                                                    self.pointAnnotaion(coord!, addresse: addresses, info: info)
+                                                    
+                                                    let latitude = placemarks[0].location!.coordinate.latitude
+                                                    let longitude = placemarks[0].location!.coordinate.longitude
+                                                    self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                                                    
+                                                    let spanX = 0.0725
+                                                    let spanY = 0.0725
+                                                    let span = MKCoordinateSpan (latitudeDelta: spanX, longitudeDelta: spanY)
+                                                    let region = MKCoordinateRegion(center: self.location, span: span)
+                                                    
+                                                    self.mapView.setRegion(region, animated: true)
+                                                }
+                                                else
+                                                {
+                                                    print ("Address not found. : \(String(describing: error))")
+                                                }
+                                            }  )
     }
     
     func formatAddressFromPlacemark(_ placemark: CLPlacemark) -> String
@@ -171,18 +171,18 @@ class MainWindowController: NSWindowController {
     
     func tableViewSelection(_ notification: Notification)
     {
-        let tableView = notification.object as! NSTableView
-        let row = tableView.selectedRow
-        guard row != -1 else {  return }
-        
-        let latitude = autoCompleteFilterArray[row].coord.latitude
-        let longitude = autoCompleteFilterArray[row].coord.longitude
-        let location = CLLocation(latitude: latitude, longitude: longitude)
-        
-        mapView.removeAnnotations(mapView.annotations)
-        addressEntered(location, info: "City")
+//        let tableView = notification.object as! NSTableView
+//        let row = tableView.selectedRow
+//        guard row != -1 else {  return }
+//
+//        let latitude = autoCompleteFilterArray[row].coord.latitude
+//        let longitude = autoCompleteFilterArray[row].coord.longitude
+//        let location = CLLocation(latitude: latitude, longitude: longitude)
+//
+//        mapView.removeAnnotations(mapView.annotations)
+//        addressEntered(location, info: "City")
     }
-
+    
     // MARK: - Actions
     @IBAction func addItem(_ sender: NSButton)
     {
@@ -197,7 +197,6 @@ class MainWindowController: NSWindowController {
         arrayCity.append(city)
         
         tableViewCity.reloadData()
-        
         tableViewCity.selectRowIndexes(IndexSet(integer: arrayCity.count - 1), byExtendingSelection: false)
         
         saveCity()
@@ -210,7 +209,6 @@ class MainWindowController: NSWindowController {
         arrayCity.remove(at: selectedRow)
         
         tableViewCity.reloadData()
-        
         tableViewCity.selectRowIndexes(IndexSet(integer: selectedRow - 1), byExtendingSelection: false)
         
         saveCity()
@@ -255,21 +253,21 @@ extension MainWindowController: NSTableViewDelegate {
         return cellView
     }
     
-     func tableViewSelectionDidChange(_ notification: Notification)
+    func tableViewSelectionDidChange(_ notification: Notification)
     {
-        let tableView = notification.object as! NSTableView
-        
-        let row = tableView.selectedRow
-        guard row != -1 else { return }
-        
-        let latitude = arrayCity[row].coord.latitude
-        let longitude = arrayCity[row].coord.longitude
-        let location = CLLocation(latitude: latitude, longitude: longitude)
-        
-        mapView.removeAnnotations(mapView.annotations)
-        addressEntered(location, info: "City")
+//        let tableView = notification.object as! NSTableView
+//        
+//        let row = tableView.selectedRow
+//        guard row != -1 else { return }
+//        
+//        let latitude = arrayCity[row].coord.latitude
+//        let longitude = arrayCity[row].coord.longitude
+//        let location = CLLocation(latitude: latitude, longitude: longitude)
+//        
+//        mapView.removeAnnotations(mapView.annotations)
+//        addressEntered(location, info: "City")
     }
-
+    
 }
 
 
@@ -280,9 +278,9 @@ extension MainWindowController  : AutoCompleteTableViewDelegate {
         
         let searchString = searchField.stringValue
         
-//        autoCompleteFilterArray = cities.filter{ $0.name.hasPrefix(searchString) || $0.country.contains( searchString )}
+        //        autoCompleteFilterArray = cities.filter{ $0.name.hasPrefix(searchString) || $0.country.contains( searchString )}
         autoCompleteFilterArray = cities.filter{ $0.name.hasPrefix(searchString) }
-
+        
         let matches = (0..<autoCompleteFilterArray.count).map { (i) -> String in
             return autoCompleteFilterArray[i].name + ", " + autoCompleteFilterArray[i].country
         }
@@ -294,7 +292,7 @@ extension MainWindowController  : AutoCompleteTableViewDelegate {
 // MARK: -
 extension NSUserInterfaceItemIdentifier {
     static let nameCell       = NSUserInterfaceItemIdentifier("name")
-    static let countryCell       = NSUserInterfaceItemIdentifier("country")
+    static let countryCell    = NSUserInterfaceItemIdentifier("country")
     static let flagCell       = NSUserInterfaceItemIdentifier("flag")
 }
 

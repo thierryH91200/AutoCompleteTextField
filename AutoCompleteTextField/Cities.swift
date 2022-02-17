@@ -1,12 +1,12 @@
 //
-//  Feed.swift
-//  Reader
+//  Cities.swift
+//  AutoCompleteTextField
 //
-//  Created by Jean-Pierre Distler on 19.01.16.
-//  Copyright © 2016 Razeware LLC. All rights reserved.
+//  Created by thierryH24 on 03/07/2018.
+//  Copyright © 2018 thierryH24. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 //{
 //    "name" : "Forville",
