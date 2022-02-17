@@ -30,8 +30,8 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        
+        NotificationCenter.receive(instance: self, selector: #selector(tableViewSelection(_:)), name: .updateAccount)
+
         searchField.tableViewDelegate = self
         DispatchQueue.global().async {
             self.cities = self.loadJson()
@@ -171,17 +171,18 @@ class MainWindowController: NSWindowController {
     
     func tableViewSelection(_ notification: Notification)
     {
-//        let tableView = notification.object as! NSTableView
-//        let row = tableView.selectedRow
-//        guard row != -1 else {  return }
-//
-//        let latitude = autoCompleteFilterArray[row].coord.latitude
-//        let longitude = autoCompleteFilterArray[row].coord.longitude
-//        let location = CLLocation(latitude: latitude, longitude: longitude)
-//
-//        mapView.removeAnnotations(mapView.annotations)
-//        addressEntered(location, info: "City")
+       let tableView = notification.object as! NSTableView
+        let row = tableView.selectedRow
+        guard row != -1 else {  return }
+
+        let latitude = autoCompleteFilterArray[row].coord.latitude
+        let longitude = autoCompleteFilterArray[row].coord.longitude
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+
+        mapView.removeAnnotations(mapView.annotations)
+        addressEntered(location, info: "City")
     }
+
     
     // MARK: - Actions
     @IBAction func addItem(_ sender: NSButton)
@@ -253,19 +254,20 @@ extension MainWindowController: NSTableViewDelegate {
         return cellView
     }
     
+    
     func tableViewSelectionDidChange(_ notification: Notification)
     {
-//        let tableView = notification.object as! NSTableView
-//        
-//        let row = tableView.selectedRow
-//        guard row != -1 else { return }
-//        
-//        let latitude = arrayCity[row].coord.latitude
-//        let longitude = arrayCity[row].coord.longitude
-//        let location = CLLocation(latitude: latitude, longitude: longitude)
-//        
-//        mapView.removeAnnotations(mapView.annotations)
-//        addressEntered(location, info: "City")
+        let tableView = notification.object as! NSTableView
+        
+        let row = tableView.selectedRow
+        guard row != -1 else { return }
+        
+        let latitude = arrayCity[row].coord.latitude
+        let longitude = arrayCity[row].coord.longitude
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        mapView.removeAnnotations(mapView.annotations)
+        addressEntered(location, info: "City")
     }
     
 }

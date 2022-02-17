@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0322182C27BE2903006EB935 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0322182B27BE2903006EB935 /* Notification.swift */; };
 		0327A09922CA032400D84D0D /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0327A09B22CA032400D84D0D /* MainWindowController.xib */; };
 		035BAA9122CCB58F0081B76B /* doc in Resources */ = {isa = PBXBuildFile; fileRef = 035BAA9022CCB58E0081B76B /* doc */; };
 		0383D92C20EB8F5000A27010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0383D92B20EB8F5000A27010 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0322182B27BE2903006EB935 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0327A09A22CA032400D84D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
 		0327A09D22CA032C00D84D0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainWindowController.strings; sourceTree = "<group>"; };
 		0327A09E22CA033700D84D0D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				0383D93320EB8F5200A27010 /* AutoCompleteTextField.entitlements */,
 				0383D95B20EB93B800A27010 /* Cities.swift */,
 				0383D96120EB95C000A27010 /* city.list.json */,
+				0322182B27BE2903006EB935 /* Notification.swift */,
 				0383D95720EB8FFB00A27010 /* MainWindowController.swift */,
 				0327A09B22CA032400D84D0D /* MainWindowController.xib */,
 			);
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0383D95C20EB93B800A27010 /* Cities.swift in Sources */,
+				0322182C27BE2903006EB935 /* Notification.swift in Sources */,
 				0383D92C20EB8F5000A27010 /* AppDelegate.swift in Sources */,
 				0383D95620EB8FBA00A27010 /* AutoCompleteTextField.swift in Sources */,
 				0383D95920EB8FFB00A27010 /* MainWindowController.swift in Sources */,
